@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRent.API", "MyRent.API\MyRent.API.csproj", "{C98EF87B-A0B8-400D-8359-6D0876939A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRent.WebSite", "MyRent.WebSite\MyRent.WebSite.csproj", "{4DA8FA83-BE29-4C87-A92C-145314B2F0B5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C98EF87B-A0B8-400D-8359-6D0876939A22} = {C98EF87B-A0B8-400D-8359-6D0876939A22}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C98EF87B-A0B8-400D-8359-6D0876939A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98EF87B-A0B8-400D-8359-6D0876939A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98EF87B-A0B8-400D-8359-6D0876939A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98EF87B-A0B8-400D-8359-6D0876939A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA8FA83-BE29-4C87-A92C-145314B2F0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA8FA83-BE29-4C87-A92C-145314B2F0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA8FA83-BE29-4C87-A92C-145314B2F0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA8FA83-BE29-4C87-A92C-145314B2F0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57A41198-51F4-45DD-A7CA-341064D49BD9}
+	EndGlobalSection
+EndGlobal
