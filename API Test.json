@@ -1,0 +1,13 @@
+{
+  "user_id": "332",
+  "from": "2020-07-09",
+  "to": "2020-07-11",
+  "can_sleep_max": 1,
+  "bedrooms": 1,
+  "bathrooms": 1,
+  "paging": {
+    "skip": 0,
+    "take": 12
+  },
+  "name": "Apa"
+}
