@@ -1,6 +1,6 @@
-﻿using Blazor.Web.Components;
+﻿using MyRent.Blazor.Web.Components;
 using Microsoft.AspNetCore.Components;
-using MyRent.Blazor.WebSite.Customization;
+using MyRent.Blazor.Web.Customization;
 
 namespace MyRent.Blazor.WebSite.Pages
 {

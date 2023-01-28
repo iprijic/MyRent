@@ -1,9 +1,66 @@
 ﻿
 @inherits ControlComponent
-@namespace Blazor.Web.Components
+@namespace MyRent.Blazor.Web.Components
 
-<h3>Table</h3>
+@if (String.IsNullOrEmpty(entityName) == false)
+{
 
-@code {
+  
+    <h5>List of properties (@rows.Count)</h5>
 
+    @*<form class="example" action="">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search" @onclick="OnClickFilter"></i></button>
+    </form>*@
+
+   @* <button><i class="fa fa-search" @onclick="OnClickFilter"></i></button>*@
+
+
+    <input type="text" placeholder="Search.." name="search" @bind="filterdata">
+        <button type="submit"><i class="fa fa-search" @onclick="OnClickFilter"></i></button>
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                @for (int j = 0; j < columns.Count; j++)
+                {
+                    <th scope="col">@columns[j].Value</th>
+                }
+
+            </tr>
+        </thead>
+
+        <tbody>
+        @for (int i = 0; i < rows.Count; i++)
+        {
+            <tr>
+
+                @for (int j = 0; j < columns.Count; j++)
+                {
+                        if (columns[j].Key.Item2 == false && columns[j].Key.Item1 == "Detail")
+                        {
+                            <td>
+                                <CellDetail></CellDetail>
+                            </td>
+                        }
+                        else if (columns[j].Key.Item2 == true)                      
+                        {
+                             <td>
+                                <CellText Entity="@entityName" Row="@rows[i]" Column="@columns[j]"></CellText>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>Cell</td>
+                            
+                        }
+                }
+            </tr>
+        }
+        </tbody>
+
+    </table>
 }
+

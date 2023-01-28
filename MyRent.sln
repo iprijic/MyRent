@@ -19,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{92D810F6-692
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRent.API", "MyRent.API\MyRent.API.csproj", "{D635A586-D6DA-40F9-9B15-D8E5BDE72914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRent.WebSite", "MyRent.WebSite\MyRent.WebSite.csproj", "{3E866EA9-8EEA-417B-94ED-5E5E6DC99D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRent.WebSite", "MyRent.WebSite\MyRent.WebSite.csproj", "{3E866EA9-8EEA-417B-94ED-5E5E6DC99D1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRent.Blazor.WebSite", "MyRent.Blazor.WebSite\MyRent.Blazor.WebSite.csproj", "{66269765-1493-481C-88CE-4EA30076C525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRent.Blazor.WebSite", "MyRent.Blazor.WebSite\MyRent.Blazor.WebSite.csproj", "{66269765-1493-481C-88CE-4EA30076C525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

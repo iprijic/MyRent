@@ -1,0 +1,65 @@
+﻿@using System.Text.Json;
+@inherits ControlComponent
+@namespace MyRent.Blazor.Web.Components
+
+<div>
+    @if (Entity == "Apartments")
+    {
+        @if (Column.Key.Item1 == "Name")
+        {
+            <div class="ap-name-holder">
+                @StringFromJSON((JsonElement)Row["Name"])
+            </div>
+
+            <div class="address-holder">
+                @StringFromJSON((JsonElement)Row["Address"])
+            </div>
+        }
+
+        @if (Column.Key.Item1 == "Owner")
+        {
+            Dictionary<string, object> descendants = ((JsonElement)(Row["Owner"])).Deserialize<Dictionary<string, object>>();
+
+            <div class="owner-icon-holder">
+                <a img class="button material-icons text-blue btn-no-border-back" style="text-decoration:none !important">person</a>
+             </div>
+ 
+
+            <div class="owner-name-holder">
+                @StringFromJSON((JsonElement)descendants["FullName"])
+            </div>
+
+            <div class="owner-mail-holder">
+                @StringFromJSON((JsonElement)descendants["PrincipalName"])
+            </div>
+        }
+
+        @if (Column.Key.Item1 == "Contact")
+        {
+            Dictionary<string, object> descendants = ((JsonElement)(Row["InterierObject"])).Deserialize<Dictionary<string, object>>();
+
+            <div>
+                @IntFromJSON((JsonElement)descendants["NoOfBedrooms"]).ToString() Bedrooms
+            </div>
+            <div>
+                @IntFromJSON((JsonElement)descendants["NoOfBathrooms"]).ToString() Bathrooms
+            </div>
+        }
+
+        @if (Column.Key.Item1 == "Type")
+        {
+            <div class="ap-name-holder">
+                (@StringFromJSON((JsonElement)Row["Type"]))
+            </div>
+        }
+
+
+    }
+</div>
+
+@code
+{
+  
+}
+
+

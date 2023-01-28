@@ -1,4 +1,4 @@
-﻿namespace MyRent.Blazor.WebSite.Customization
+﻿namespace MyRent.Blazor.Web.Customization
 {
     public interface IConfigurator
     {
@@ -14,7 +14,7 @@
             {
                 { "Apartments" , new List<KeyValuePair<(string,bool), string>>()
                     {
-                        KeyValuePair.Create(("",false),"Detail"),
+                        KeyValuePair.Create(("Detail",false),"Detail"),
                         KeyValuePair.Create(("Name",true),"Name"),
                         KeyValuePair.Create(("Owner",true),"Owner"),
                         KeyValuePair.Create(("Contact",true),"Contact"),
