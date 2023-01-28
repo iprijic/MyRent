@@ -28,8 +28,10 @@ namespace MyRent.Blazor.Web.Components
         List<Dictionary<String, Object>> rows;
         List<KeyValuePair<(string, bool), string>> columns;
 
-        private String filterdata; 
+        private String filterdata;
 
+        private Nullable<Int64> ID { get; set; } = null;
+        
         private async Task Load(String filter)
         {
             HttpResponseMessage response;
@@ -92,6 +94,16 @@ namespace MyRent.Blazor.Web.Components
                 await Load(String.Empty);
 
             //await Task.CompletedTask;
+        }
+
+        private void OnShowForm(Int64 ID)
+        {
+            this.ID = ID;
+        }
+
+        private void OnShowTable()
+        {
+            this.ID = null;
         }
 
         protected override Task OnInitializedAsync()

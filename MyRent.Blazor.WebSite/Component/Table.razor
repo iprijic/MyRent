@@ -1,66 +1,64 @@
-﻿
+﻿@using System.Text.Json;
 @inherits ControlComponent
 @namespace MyRent.Blazor.Web.Components
 
-@if (String.IsNullOrEmpty(entityName) == false)
+@if (ID == null)
 {
 
-  
-    <h5>List of properties (@rows.Count)</h5>
+    @if (String.IsNullOrEmpty(entityName) == false)
+    {
+        <h5>List of properties (@rows.Count)</h5>
 
-    @*<form class="example" action="">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search" @onclick="OnClickFilter"></i></button>
-    </form>*@
-
-   @* <button><i class="fa fa-search" @onclick="OnClickFilter"></i></button>*@
-
-
-    <input type="text" placeholder="Search.." name="search" @bind="filterdata">
+        <input type="text" placeholder="Search.." name="search" @bind="filterdata">
         <button type="submit"><i class="fa fa-search" @onclick="OnClickFilter"></i></button>
 
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    @for (int j = 0; j < columns.Count; j++)
+                    {
+                        <th scope="col">@columns[j].Value</th>
+                    }
 
+                </tr>
+            </thead>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                @for (int j = 0; j < columns.Count; j++)
+            <tbody>
+                @for (int i = 0; i < rows.Count; i++)
                 {
-                    <th scope="col">@columns[j].Value</th>
+                    <tr>
+
+                        @for (int j = 0; j < columns.Count; j++)
+                        {
+                            if (columns[j].Key.Item2 == false && columns[j].Key.Item1 == "Detail")
+                            {
+                                Int64 ID = ((JsonElement)(rows[i].First(k => k.Key == "ID")).Value).GetInt64();
+
+                                <td>
+                                    <CellDetail ID="@ID" OnShowFormHandler="@OnShowForm"></CellDetail>
+                                </td>
+                            }
+                            else if (columns[j].Key.Item2 == true)
+                            {
+                                <td>
+                                    <CellText Entity="@entityName" Row="@rows[i]" Column="@columns[j]"></CellText>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>Cell</td>
+
+                            }
+                        }
+                    </tr>
                 }
+            </tbody>
 
-            </tr>
-        </thead>
-
-        <tbody>
-        @for (int i = 0; i < rows.Count; i++)
-        {
-            <tr>
-
-                @for (int j = 0; j < columns.Count; j++)
-                {
-                        if (columns[j].Key.Item2 == false && columns[j].Key.Item1 == "Detail")
-                        {
-                            <td>
-                                <CellDetail></CellDetail>
-                            </td>
-                        }
-                        else if (columns[j].Key.Item2 == true)                      
-                        {
-                             <td>
-                                <CellText Entity="@entityName" Row="@rows[i]" Column="@columns[j]"></CellText>
-                            </td>
-                        }
-                        else
-                        {
-                            <td>Cell</td>
-                            
-                        }
-                }
-            </tr>
-        }
-        </tbody>
-
-    </table>
+        </table>
+    }
+}
+else
+{
+    <FormDetail OnShowTableHandler="@OnShowTable"></FormDetail>
 }
 
