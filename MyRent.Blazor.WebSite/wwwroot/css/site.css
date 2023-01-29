@@ -85,3 +85,21 @@ a, .btn-link {
     margin-right: 3px;
     display: inline-block;
 }
+
+.back-button-holder {
+    padding-bottom: 8%;
+}
+
+.form-left-group-holder {
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.form-right-group-holder {
+    margin-left: 3px;
+    display: inline-block;
+}
+
+.group-button-holder {
+    padding-top: 8%;
+}
